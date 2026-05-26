@@ -116,7 +116,7 @@ export function AskScreen({
         rightBadge="10 min"
       />
 
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 py-3 space-y-3 no-scrollbar">
+      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-3 no-scrollbar">
         {messages.map((m, i) => {
           if (m.role === "typing")
             return (
