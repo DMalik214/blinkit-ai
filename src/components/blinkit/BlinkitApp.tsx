@@ -58,10 +58,9 @@ export function BlinkitApp() {
   const cartCount = cartItems.reduce((s, { qty }) => s + qty, 0);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center py-4 px-2 bg-[#E5E7EB]">
+    <div className="w-full h-dvh overflow-hidden flex items-center justify-center px-2 bg-[#E5E7EB]">
       <div
-        className="relative w-full max-w-[390px] bg-white rounded-[36px] overflow-hidden shadow-2xl flex flex-col"
-        style={{ height: "min(844px, 100vh - 32px)" }}
+        className="relative w-full max-w-[390px] h-full bg-white rounded-[36px] overflow-hidden shadow-2xl flex flex-col"
       >
         {/* Status notch bar */}
         <div
