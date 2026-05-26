@@ -93,7 +93,7 @@ export function AskScreen({
     }, 1500);
   };
 
-  const suggestions = ["Make it vegan", "Add dessert", "Under ₹300 instead"];
+  const suggestions = ["Make it vegan 🌱", "Add dessert 🍮", "Under ₹300 💰"];
 
   return (
     <div className="flex-1 flex flex-col screen-enter bg-secondary">
