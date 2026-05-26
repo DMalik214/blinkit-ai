@@ -99,7 +99,7 @@ export function AskScreen({
   const suggestions = ["Make it vegan 🌱", "Add dessert 🍮", "Under ₹300 💰"];
 
   return (
-    <div className="flex-1 flex flex-col screen-enter bg-secondary">
+    <div className="flex-1 min-h-0 flex flex-col screen-enter bg-secondary">
       <ScreenHeader
         title="✨ Ask Blinkit"
         subtitle="Powered by Blinkit AI"
