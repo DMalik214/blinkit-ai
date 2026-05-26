@@ -72,42 +72,44 @@ export function BlinkitApp() {
           <span>100%</span>
         </div>
 
-        {screen === "home" && (
-          <HomeScreen
-            onNav={setScreen}
-            onAddItem={handleAdd}
-            cart={cart}
-            onPrefillQuery={setPrefill}
-          />
-        )}
-        {screen === "ask" && (
-          <AskScreen
-            onBack={() => setScreen("home")}
-            onAddItems={handleAddItems}
-            cart={cart}
-            prefill={prefill}
-            onClearPrefill={() => setPrefill("")}
-            onGoCart={() => setScreen("cart")}
-          />
-        )}
-        {screen === "fridge" && (
-          <FridgeScreen
-            onBack={() => setScreen("home")}
-            onAddAll={() => {
-              handleAddItems(fridgeReorder);
-              setScreen("cart");
-            }}
-          />
-        )}
-        {screen === "week" && <WeekScreen onBack={() => setScreen("home")} />}
-        {screen === "cart" && (
-          <CartScreen
-            onBack={() => setScreen("home")}
-            items={cartItems}
-            total={cartTotal}
-          />
-        )}
-        {screen === "account" && <AccountScreen onBack={() => setScreen("home")} />}
+        <div className="flex-1 min-h-0">
+          {screen === "home" && (
+            <HomeScreen
+              onNav={setScreen}
+              onAddItem={handleAdd}
+              cart={cart}
+              onPrefillQuery={setPrefill}
+            />
+          )}
+          {screen === "ask" && (
+            <AskScreen
+              onBack={() => setScreen("home")}
+              onAddItems={handleAddItems}
+              cart={cart}
+              prefill={prefill}
+              onClearPrefill={() => setPrefill("")}
+              onGoCart={() => setScreen("cart")}
+            />
+          )}
+          {screen === "fridge" && (
+            <FridgeScreen
+              onBack={() => setScreen("home")}
+              onAddAll={() => {
+                handleAddItems(fridgeReorder);
+                setScreen("cart");
+              }}
+            />
+          )}
+          {screen === "week" && <WeekScreen onBack={() => setScreen("home")} />}
+          {screen === "cart" && (
+            <CartScreen
+              onBack={() => setScreen("home")}
+              items={cartItems}
+              total={cartTotal}
+            />
+          )}
+          {screen === "account" && <AccountScreen onBack={() => setScreen("home")} />}
+        </div>
 
         <BottomNav active={screen} onChange={setScreen} cartCount={cartCount} />
       </div>
