@@ -160,7 +160,7 @@ export function AskScreen({
                           {p.emoji}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-[12px] font-bold leading-tight truncate">
+                          <div className="text-[12px] font-bold leading-snug line-clamp-2">
                             {p.name} {p.weight}
                           </div>
                           <div className="text-[10px] text-muted-foreground">
@@ -188,7 +188,7 @@ export function AskScreen({
                         className="w-full font-bold text-sm py-2 rounded-lg active:scale-[0.98] transition"
                         style={{ background: "var(--blink-yellow)", color: "#1C1C1C" }}
                       >
-                        View Cart →
+                        View Cart → ₹{total}
                       </button>
                     </div>
                   </div>
