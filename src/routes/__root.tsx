@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Blinkit Ai intergrated, a idea by Deepak Malik IIT Roorkee" },
+      { name: "description", content: "Blinkit AI Reimagined is a mobile web prototype of a quick commerce app with generative AI features." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Blinkit Ai intergrated, a idea by Deepak Malik IIT Roorkee" },
+      { property: "og:description", content: "Blinkit AI Reimagined is a mobile web prototype of a quick commerce app with generative AI features." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Blinkit Ai intergrated, a idea by Deepak Malik IIT Roorkee" },
+      { name: "twitter:description", content: "Blinkit AI Reimagined is a mobile web prototype of a quick commerce app with generative AI features." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d187c6d6-06a0-4bed-ae75-ca5c435d0479/id-preview-69e9ba54--d414ede7-e0e4-4773-b210-4a75a7f3e51e.lovable.app-1779783450850.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d187c6d6-06a0-4bed-ae75-ca5c435d0479/id-preview-69e9ba54--d414ede7-e0e4-4773-b210-4a75a7f3e51e.lovable.app-1779783450850.png" },
     ],
     links: [
       {
