@@ -50,6 +50,14 @@ export const defaultCart: Product[] = [
   { id: "df1", name: "Tata Salt", weight: "1kg", price: 28, emoji: "🧂", bg: "#F4F6FA", reason: "essential" },
   { id: "df2", name: "Fortune Oil", weight: "1L", price: 165, emoji: "🫗", bg: "#FFF4D6", reason: "cooking" },
   { id: "df3", name: "Onions", weight: "1kg", price: 32, emoji: "🧅", bg: "#FDE6C8", reason: "base" },
+  { id: "df4", name: "Tomatoes", weight: "1kg", price: 40, emoji: "🍅", bg: "#FFE0E0", reason: "everyday staple" },
+];
+
+export const biryaniCart: Product[] = [
+  { id: "by1", name: "India Gate Basmati Rice", weight: "1kg", price: 185, emoji: "🍚", bg: "#FFF4D6", reason: "long grain basmati" },
+  { id: "by2", name: "Everest Biryani Masala", weight: "50g", price: 65, emoji: "🌶️", bg: "#FFE0E0", reason: "authentic spice mix" },
+  { id: "by3", name: "Fresh Chicken Curry Cut", weight: "500g", price: 220, emoji: "🍗", bg: "#FDE6C8", reason: "protein base" },
+  { id: "by4", name: "Mother Dairy Curd", weight: "400g", price: 45, emoji: "🥣", bg: "#E8F0FF", reason: "for marination" },
 ];
 
 export const weekPlan = [

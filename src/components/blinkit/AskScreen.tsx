@@ -5,6 +5,7 @@ import {
   vegHealthyCart,
   breakfastCart,
   budgetCart,
+  biryaniCart,
   defaultCart,
   type Product,
 } from "@/lib/blinkit-data";
@@ -17,15 +18,17 @@ type Msg =
 
 function aiResponseFor(text: string): { reply: string; cart: Product[]; budget?: number } {
   const t = text.toLowerCase();
-  if (/veg|healthy|salad/.test(t))
-    return { reply: "Going healthy! 🥗 Here's a balanced veg cart for you", cart: vegHealthyCart };
-  if (/breakfast|morning/.test(t))
+  if (/breakfast|morning|nashta/.test(t))
     return { reply: "Quick breakfast coming up ☕ Ready in 2 minutes", cart: breakfastCart };
-  if (/budget|cheap|₹|under|rs/.test(t))
+  if (/biryani|biriyani/.test(t))
+    return { reply: "Biryani night! 🍚 Here are all the ingredients you need", cart: biryaniCart };
+  if (/vegan|healthy|salad|veg\b/.test(t))
+    return { reply: "Going healthy! 🥗 Here's a balanced veg cart for you", cart: vegHealthyCart };
+  if (/budget|cheap|₹|under|rs\b/.test(t))
     return { reply: "Budget mode on! 💰 Here's the best value cart", cart: budgetCart };
   if (/pasta/.test(t))
     return { reply: "Perfect! 🍝 Here's your pasta dinner cart for 2 — total ₹374", cart: pastaCart, budget: 400 };
-  return { reply: "Got it! Here's your cart based on what you asked", cart: defaultCart };
+  return { reply: "Got it! ✨ Here's a smart cart based on what you asked", cart: defaultCart };
 }
 
 export function AskScreen({
