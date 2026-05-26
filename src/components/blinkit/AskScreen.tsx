@@ -99,7 +99,7 @@ export function AskScreen({
   const suggestions = ["Make it vegan 🌱", "Add dessert 🍮", "Under ₹300 💰"];
 
   return (
-    <div className="flex-1 flex flex-col screen-enter bg-secondary">
+    <div className="flex-1 min-h-0 flex flex-col screen-enter bg-secondary">
       <ScreenHeader
         title="✨ Ask Blinkit"
         subtitle="Powered by Blinkit AI"
@@ -116,7 +116,7 @@ export function AskScreen({
         rightBadge="10 min"
       />
 
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 py-3 space-y-3 no-scrollbar">
+      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-3 no-scrollbar">
         {messages.map((m, i) => {
           if (m.role === "typing")
             return (
