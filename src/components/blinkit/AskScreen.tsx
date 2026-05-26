@@ -62,6 +62,7 @@ export function AskScreen({
   ]);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   // Auto-add pasta cart on load
   useEffect(() => {
@@ -78,7 +79,7 @@ export function AskScreen({
   }, [prefill]);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages]);
 
   const send = (text?: string) => {
@@ -99,7 +100,7 @@ export function AskScreen({
   const suggestions = ["Make it vegan 🌱", "Add dessert 🍮", "Under ₹300 💰"];
 
   return (
-    <div className="flex-1 min-h-0 flex flex-col screen-enter bg-secondary">
+    <div className="h-full flex flex-col overflow-hidden screen-enter bg-secondary">
       <ScreenHeader
         title="✨ Ask Blinkit"
         subtitle="Powered by Blinkit AI"
@@ -116,7 +117,7 @@ export function AskScreen({
         rightBadge="10 min"
       />
 
-      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-3 no-scrollbar">
+      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-3 pb-4 space-y-3 no-scrollbar">
         {messages.map((m, i) => {
           if (m.role === "typing")
             return (
@@ -200,10 +201,11 @@ export function AskScreen({
             </div>
           );
         })}
+        <div ref={bottomRef} />
       </div>
 
       {/* Suggestions + input */}
-      <div className="border-t border-border bg-white px-3 pt-2 pb-3">
+      <div className="flex-shrink-0 sticky bottom-0 bg-white px-3 py-2 border-t" style={{ borderColor: "#eee" }}>
         <div className="flex gap-2 overflow-x-auto no-scrollbar mb-2">
           {suggestions.map((s) => (
             <button

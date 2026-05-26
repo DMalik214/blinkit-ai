@@ -17,7 +17,7 @@ export function BottomNav({
   ];
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-border px-2 pt-2 pb-3 flex items-center justify-around z-30">
+    <div className="flex-shrink-0 bg-white border-t border-border px-2 pt-2 pb-3 flex items-center justify-around z-30">
       {tabs.map((t) => {
         const isActive = active === t.id;
         const isAsk = t.id === "ask";

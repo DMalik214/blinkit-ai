@@ -58,10 +58,9 @@ export function BlinkitApp() {
   const cartCount = cartItems.reduce((s, { qty }) => s + qty, 0);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center py-4 px-2 bg-[#E5E7EB]">
+    <div className="w-full h-dvh overflow-hidden flex items-center justify-center px-2 bg-[#E5E7EB]">
       <div
-        className="relative w-full max-w-[390px] bg-white rounded-[36px] overflow-hidden shadow-2xl flex flex-col"
-        style={{ height: "min(844px, 100vh - 32px)" }}
+        className="relative w-full max-w-[390px] h-full bg-white rounded-[36px] overflow-hidden shadow-2xl flex flex-col"
       >
         {/* Status notch bar */}
         <div
@@ -73,42 +72,44 @@ export function BlinkitApp() {
           <span>100%</span>
         </div>
 
-        {screen === "home" && (
-          <HomeScreen
-            onNav={setScreen}
-            onAddItem={handleAdd}
-            cart={cart}
-            onPrefillQuery={setPrefill}
-          />
-        )}
-        {screen === "ask" && (
-          <AskScreen
-            onBack={() => setScreen("home")}
-            onAddItems={handleAddItems}
-            cart={cart}
-            prefill={prefill}
-            onClearPrefill={() => setPrefill("")}
-            onGoCart={() => setScreen("cart")}
-          />
-        )}
-        {screen === "fridge" && (
-          <FridgeScreen
-            onBack={() => setScreen("home")}
-            onAddAll={() => {
-              handleAddItems(fridgeReorder);
-              setScreen("cart");
-            }}
-          />
-        )}
-        {screen === "week" && <WeekScreen onBack={() => setScreen("home")} />}
-        {screen === "cart" && (
-          <CartScreen
-            onBack={() => setScreen("home")}
-            items={cartItems}
-            total={cartTotal}
-          />
-        )}
-        {screen === "account" && <AccountScreen onBack={() => setScreen("home")} />}
+        <div className="flex-1 min-h-0">
+          {screen === "home" && (
+            <HomeScreen
+              onNav={setScreen}
+              onAddItem={handleAdd}
+              cart={cart}
+              onPrefillQuery={setPrefill}
+            />
+          )}
+          {screen === "ask" && (
+            <AskScreen
+              onBack={() => setScreen("home")}
+              onAddItems={handleAddItems}
+              cart={cart}
+              prefill={prefill}
+              onClearPrefill={() => setPrefill("")}
+              onGoCart={() => setScreen("cart")}
+            />
+          )}
+          {screen === "fridge" && (
+            <FridgeScreen
+              onBack={() => setScreen("home")}
+              onAddAll={() => {
+                handleAddItems(fridgeReorder);
+                setScreen("cart");
+              }}
+            />
+          )}
+          {screen === "week" && <WeekScreen onBack={() => setScreen("home")} />}
+          {screen === "cart" && (
+            <CartScreen
+              onBack={() => setScreen("home")}
+              items={cartItems}
+              total={cartTotal}
+            />
+          )}
+          {screen === "account" && <AccountScreen onBack={() => setScreen("home")} />}
+        </div>
 
         <BottomNav active={screen} onChange={setScreen} cartCount={cartCount} />
       </div>
